@@ -1,9 +1,8 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"github.com/DataDog/datadog-api-client-go/v2/api/datadogV2"
@@ -80,40 +79,6 @@ func buildReq() (*datadogV2.LogsListRequest, error) {
 	return req, nil
 }
 
-type Row struct {
-	Timestamp  string         `json:"timestamp"`
-	Status     string         `json:"status,omitempty"`
-	Service    string         `json:"service,omitempty"`
-	Host       string         `json:"host,omitempty"`
-	Message    string         `json:"message,omitempty"`
-	Attributes map[string]any `json:"attributes,omitempty"`
-	Tags       []string       `json:"tags,omitempty"`
-}
-
-func buildRow(log *datadogV2.LogAttributes) *Row {
-	row := &Row{
-		Timestamp: log.GetTimestamp().Local().Format(time.RFC3339),
-		Status:    log.GetStatus(),
-		Service:   log.GetService(),
-		Host:      log.GetHost(),
-		Message:   log.GetMessage(),
-	}
-
-	if cli.WithAttrs {
-		if attrs, ok := log.GetAttributesOk(); ok {
-			row.Attributes = *attrs
-		}
-	}
-
-	if cli.WithTags {
-		if tags, ok := log.GetTagsOk(); ok {
-			row.Tags = *tags
-		}
-	}
-
-	return row
-}
-
 func main() {
 	kong.Parse(
 		&cli,
@@ -127,32 +92,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = client.ListLogs(*req, func(resp datadogV2.LogsListResponse) {
-		for _, data := range resp.Data {
-			attrs, ok := data.GetAttributesOk()
-
-			if !ok {
-				continue
-			}
-
-			row := buildRow(attrs)
-			line, err := json.Marshal(row)
-
-			if err != nil {
-				panic(err)
-			}
-
-			fmt.Println(string(line))
-
-			// var msg string
-
-			// if attrs.Message != nil {
-			// 	msg = *attrs.Message
-			// }
-
-			// fmt.Printf("%v\t%s\t%s\n", attrs.Timestamp.Local(), *attrs.Status, msg)
-		}
-	})
+	err = client.ListLogs(*req, print(os.Stdout, cli.WithAttrs, cli.WithTags))
 
 	if err != nil {
 		log.Fatal(err)
