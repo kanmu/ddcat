@@ -35,6 +35,7 @@ $ ddcat --from 'now-1m' service:web
 
 ## Related Links
 
+* https://docs.datadoghq.com/logs/explorer/search_syntax/
 * https://docs.datadoghq.com/logs/guide/access-your-log-data-programmatically/
 * https://docs.datadoghq.com/api/latest/logs/#search-logs
 
