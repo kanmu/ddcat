@@ -1,0 +1,20 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./cmd/ddcat
+    ldflags:
+      - -X main.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+checksum:
+  name_template: "checksums.txt"
+brews:
+  - tap:
+      owner: winebarrel
+      name: homebrew-ddcat
+    homepage: https://github.com/winebarrel/ddcat
+    description: CLI to display Datadog Logs.
+    license: MIT
+    install: |
+      bin.install 'ddcat'
