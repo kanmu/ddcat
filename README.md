@@ -10,7 +10,7 @@ CLI to display Datadog Logs.
 Usage: ddcat --api-key=STRING --app-key=STRING <query>
 
 Arguments:
-  <query>    Search query.
+  <query>    Search query. see https://docs.datadoghq.com/ja/logs/explorer/search_syntax/
 
 Flags:
   -h, --help                   Show context-sensitive help.
