@@ -20,7 +20,7 @@ var version string
 var cli struct {
 	APIKey    string   `env:"DD_API_KEY" required:"" help:"Datadog API key."`
 	APPKey    string   `env:"DD_APP_KEY" required:"" help:"Datadog APP key."`
-	Query     string   `arg:"" name:"query" required:"" help:"Search query. see https://docs.datadoghq.com/ja/logs/explorer/search_syntax/"`
+	Query     string   `arg:"" name:"query" required:"" help:"Search query. see https://docs.datadoghq.com/logs/explorer/search_syntax/"`
 	Indexes   []string `help:"Indexes to search."`
 	From      string   `help:"The minimum time for the requested logs."`
 	To        string   `help:"The maximum time for the requested logs."`
