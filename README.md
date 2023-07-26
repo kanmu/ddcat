@@ -26,7 +26,7 @@ Flags:
 ```
 
 ```
-$ ddcat --from 'now-1m' service:web
+$ ddcat --from 'now-1m' 'service:web OK'
 {"timestamp":"2023-07-26T20:10:30+09:00","status":"info","service":"web","message":"GET /user/info 200 OK"}
 {"timestamp":"2023-07-26T20:10:31+09:00","status":"info","service":"web","message":"POST /entry 200 OK"}
 {"timestamp":"2023-07-26T20:10:32+09:00","status":"info","service":"web","message":"GET /entry 200 OK"}
