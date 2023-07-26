@@ -20,13 +20,13 @@ var version string
 var cli struct {
 	APIKey    string   `env:"DD_API_KEY" required:"" help:"Datadog API key."`
 	APPKey    string   `env:"DD_APP_KEY" required:"" help:"Datadog APP key."`
-	Query     string   `arg:"" name:"query" required:""`
-	Indexes   []string `help:""`
-	From      string   `help:""`
-	To        string   `help:""`
-	Sort      string   `enum:"timestamp,-timestamp" default:"timestamp"`
-	WithAttrs bool     `help:""`
-	WithTags  bool     `help:""`
+	Query     string   `arg:"" name:"query" required:"" help:"Search query."`
+	Indexes   []string `help:"Indexes to search."`
+	From      string   `help:"The minimum time for the requested logs."`
+	To        string   `help:"The maximum time for the requested logs."`
+	Sort      string   `enum:"timestamp,-timestamp" default:"timestamp" help:"Sort parameters when querying logs ('timestamp', '-timestamp')."`
+	WithAttrs bool     `help:"Include attributes in displayed logs."`
+	WithTags  bool     `help:"Include tags in displayed logs	"`
 	Version   kong.VersionFlag
 }
 
