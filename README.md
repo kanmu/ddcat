@@ -1,5 +1,7 @@
 # ddcat
 
+[![test](https://github.com/winebarrel/ddcat/actions/workflows/build.yml/badge.svg)](https://github.com/winebarrel/ddcat/actions/workflows/build.yml)
+
 CLI to display Datadog Logs.
 
 ## Usage
