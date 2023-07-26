@@ -37,3 +37,9 @@ $ ddcat --from 'now-1m' service:web
 
 * https://docs.datadoghq.com/logs/guide/access-your-log-data-programmatically/
 * https://docs.datadoghq.com/api/latest/logs/#search-logs
+
+## Installation
+
+```
+brew install winebarrel/ddcat/ddcat
+```
