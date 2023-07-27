@@ -1,6 +1,6 @@
 # ddcat
 
-[![test](https://github.com/winebarrel/ddcat/actions/workflows/build.yml/badge.svg)](https://github.com/winebarrel/ddcat/actions/workflows/build.yml)
+[![test](https://github.com/kanmu/ddcat/actions/workflows/build.yml/badge.svg)](https://github.com/kanmu/ddcat/actions/workflows/build.yml)
 
 CLI to display Datadog Logs.
 
@@ -42,5 +42,5 @@ $ ddcat --from 'now-1m' 'service:web OK'
 ## Installation
 
 ```
-brew install winebarrel/ddcat/ddcat
+brew install kanmu/tools/ddcat
 ```
