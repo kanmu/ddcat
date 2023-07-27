@@ -11,9 +11,9 @@ checksum:
   name_template: "checksums.txt"
 brews:
   - tap:
-      owner: winebarrel
+      owner: kanmu
       name: homebrew-ddcat
-    homepage: https://github.com/winebarrel/ddcat
+    homepage: https://github.com/kanmu/ddcat
     description: CLI to display Datadog Logs.
     license: MIT
     install: |

@@ -8,7 +8,7 @@ import (
 	"github.com/DataDog/datadog-api-client-go/v2/api/datadogV2"
 	"github.com/alecthomas/kong"
 	"github.com/araddon/dateparse"
-	"github.com/winebarrel/ddcat"
+	"github.com/kanmu/ddcat"
 )
 
 func init() {

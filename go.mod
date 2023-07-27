@@ -1,4 +1,4 @@
-module github.com/winebarrel/ddcat
+module github.com/kanmu/ddcat
 
 go 1.20
 
