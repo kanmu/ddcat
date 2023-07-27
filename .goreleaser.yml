@@ -12,7 +12,7 @@ checksum:
 brews:
   - tap:
       owner: kanmu
-      name: homebrew-ddcat
+      name: homebrew-tools
     homepage: https://github.com/kanmu/ddcat
     description: CLI to display Datadog Logs.
     license: MIT
