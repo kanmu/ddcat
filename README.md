@@ -33,6 +33,12 @@ $ ddcat --from 'now-1m' 'service:web OK'
 ...
 ```
 
+## Time settings
+
+- https://docs.datadoghq.com/logs/guide/access-your-log-data-programmatically/#time-settings
+- https://github.com/araddon/dateparse#extended-example
+  - NOTE: [datepars.ParseLocal](https://pkg.go.dev/github.com/araddon/dateparse#ParseLocal) function is used inside ddcat.
+
 ## Related Links
 
 * https://docs.datadoghq.com/logs/explorer/search_syntax/
